@@ -2,8 +2,6 @@
   <img src="assets/logo.png" alt="SafeVault Logo" width="180">
 </p>
 
-<h1 align="center">SafeVault</h1>
-
 <p align="center">
   Secure desktop password manager with encrypted local storage and OTP-based recovery.
 </p>
