@@ -1,4 +1,4 @@
-Ôªø# Project Report on "SafeVault"
+# Project Report on "SafeVault"
 ### Secure Desktop Password Manager
 
 ---
@@ -21,13 +21,13 @@ We extend our sincere thanks to our respected Head of the Department for allowin
 
 Last but not the least, we would like to thank our friends and family for the support and encouragement they have given us during the course of our work.
 
-‚Äî Abdullah, Swastika, Karan
+ó Abdullah, Swastika, Karan
 
 ---
 
 ## Declaration
 
-We, the undersigned, solemnly declare that the report of this project work entitled **"SafeVault ‚Äî Secure Desktop Password Manager"** is based on our own work carried out during the course of our study.
+We, the undersigned, solemnly declare that the report of this project work entitled **"SafeVault ó Secure Desktop Password Manager"** is based on our own work carried out during the course of our study.
 
 We assert that the statements made and conclusions drawn are the outcome of our project work. We further declare that to the best of our knowledge and belief, the report contains entirely our original work and all ideas and references have been duly acknowledged.
 
@@ -39,7 +39,7 @@ Names: Abdullah, Swastika, Karan
 
 ## Certificate
 
-This is to certify that the work incorporated in the project report **"SafeVault ‚Äî Secure Desktop Password Manager"** is a record of project work carried out by **Abdullah, Swastika, and Karan** under our guidance and supervision.
+This is to certify that the work incorporated in the project report **"SafeVault ó Secure Desktop Password Manager"** is a record of project work carried out by **Abdullah, Swastika, and Karan** under our guidance and supervision.
 
 To the best of our knowledge and belief, the project:
 
@@ -76,7 +76,7 @@ ______________________
 
 ## 1. Introduction
 
-SafeVault is a secure, offline-first desktop password manager built using Electron.js. It allows users to store, manage, and retrieve their passwords in a fully encrypted vault protected by a master password. The application is designed to run entirely on the user's local machine ‚Äî no passwords are ever sent to any server or cloud service.
+SafeVault is a secure, offline-first desktop password manager built using Electron.js. It allows users to store, manage, and retrieve their passwords in a fully encrypted vault protected by a master password. The application is designed to run entirely on the user's local machine ó no passwords are ever sent to any server or cloud service.
 
 The vault is protected using AES-256-CBC encryption, and the master password is never stored in plain text. Instead, it is verified using a PBKDF2-derived key and an HMAC verifier. In the event a user forgets their master password, a secure OTP-based recovery system is available via a registered phone number.
 
@@ -113,7 +113,7 @@ In today's digital world, users are required to maintain dozens of accounts acro
 - Storing all passwords in a single encrypted vault protected by one strong master password.
 - Using military-grade AES-256-CBC encryption so that even if the vault file is accessed, the data is unreadable without the key.
 - Providing a secure OTP-based recovery mechanism so users are never permanently locked out.
-- Running entirely offline ‚Äî no data ever leaves the user's machine.
+- Running entirely offline ó no data ever leaves the user's machine.
 
 ---
 
@@ -154,17 +154,17 @@ SafeVault is a desktop application that provides a secure, encrypted local vault
 
 **Functional Requirements:**
 
-1. **Master Password Setup** ‚Äî On first launch, the user creates a master password. The password is never stored; instead, a PBKDF2-derived key and HMAC verifier are saved.
-2. **Vault Login** ‚Äî On subsequent launches, the user enters their master password. The system derives the key and verifies it against the stored HMAC.
-3. **Add Account** ‚Äî The user can add a new credential (website, username, password). The entry is encrypted with AES-256-CBC before being saved to disk.
-4. **View / Reveal Password** ‚Äî Passwords are hidden by default. Revealing a password requires re-entering the master password for security.
-5. **Edit Account** ‚Äî Users can update any saved credential after verifying their master password.
-6. **Delete / Restore Account** ‚Äî Deleted accounts go to a recycle bin and can be restored or permanently deleted.
-7. **Password Strength Checker** ‚Äî Real-time feedback on password strength as the user types.
-8. **Password Generator** ‚Äî Generates a cryptographically random 16-character password.
-9. **OTP Recovery** ‚Äî If the user forgets their master password, they can recover access via a 6-digit OTP sent to their registered phone number.
-10. **Auto-Lock** ‚Äî The vault automatically locks after 6 seconds of inactivity, clearing the session key from memory.
-11. **Factory Reset** ‚Äî Users can erase all vault data from the Settings panel.
+1. **Master Password Setup** ó On first launch, the user creates a master password. The password is never stored; instead, a PBKDF2-derived key and HMAC verifier are saved.
+2. **Vault Login** ó On subsequent launches, the user enters their master password. The system derives the key and verifies it against the stored HMAC.
+3. **Add Account** ó The user can add a new credential (website, username, password). The entry is encrypted with AES-256-CBC before being saved to disk.
+4. **View / Reveal Password** ó Passwords are hidden by default. Revealing a password requires re-entering the master password for security.
+5. **Edit Account** ó Users can update any saved credential after verifying their master password.
+6. **Delete / Restore Account** ó Deleted accounts go to a recycle bin and can be restored or permanently deleted.
+7. **Password Strength Checker** ó Real-time feedback on password strength as the user types.
+8. **Password Generator** ó Generates a cryptographically random 16-character password.
+9. **OTP Recovery** ó If the user forgets their master password, they can recover access via a 6-digit OTP sent to their registered phone number.
+10. **Auto-Lock** ó The vault automatically locks after 6 seconds of inactivity, clearing the session key from memory.
+11. **Factory Reset** ó Users can erase all vault data from the Settings panel.
 
 **Non-Functional Requirements:**
 
@@ -181,22 +181,22 @@ SafeVault is a desktop application that provides a secure, encrypted local vault
 
 SafeVault follows the Electron two-process architecture:
 
-- **Main Process** (`main.js`, `src/main/`) ‚Äî Manages the application lifecycle, creates the BrowserWindow, and handles IPC (Inter-Process Communication) events such as OTP sending/verification and file path resolution.
-- **Renderer Process** (`src/renderer/`) ‚Äî Runs the UI (HTML/CSS/JS). Handles all user interactions, encryption/decryption, and vault file I/O.
+- **Main Process** (`main.js`, `src/main/`) ó Manages the application lifecycle, creates the BrowserWindow, and handles IPC (Inter-Process Communication) events such as OTP sending/verification and file path resolution.
+- **Renderer Process** (`src/renderer/`) ó Runs the UI (HTML/CSS/JS). Handles all user interactions, encryption/decryption, and vault file I/O.
 
 ### Data Flow
 
 ```
 User Input (Master Password)
-        ‚Üì
+        ?
 PBKDF2 Key Derivation (150,000 iterations, SHA-512)
-        ‚Üì
+        ?
 AES-256-CBC Encryption
-        ‚Üì
+        ?
 Encrypted JSON Block saved to passwords.json
-        ‚Üì
+        ?
 (On Load) AES-256-CBC Decryption using session key
-        ‚Üì
+        ?
 Plaintext credentials displayed in UI
 ```
 
@@ -206,21 +206,21 @@ All data is stored in the user's AppData directory:
 
 ```
 %APPDATA%/SafeVault/data/
-  ‚îú‚îÄ‚îÄ master.json      ‚Üê PBKDF2 salt + HMAC verifier (no plain password)
-  ‚îú‚îÄ‚îÄ passwords.json   ‚Üê Array of AES-256-CBC encrypted credential blocks
-  ‚îî‚îÄ‚îÄ recovery.json    ‚Üê Phone-encrypted vault key for OTP recovery
+  +-- master.json      ? PBKDF2 salt + HMAC verifier (no plain password)
+  +-- passwords.json   ? Array of AES-256-CBC encrypted credential blocks
+  +-- recovery.json    ? Phone-encrypted vault key for OTP recovery
 ```
 
 ### Entity Relationship (Logical)
 
 ```
 [User]
-  ‚îî‚îÄ‚îÄ has one ‚Üí [MasterPassword] (stored as PBKDF2 salt + HMAC verifier)
-  ‚îî‚îÄ‚îÄ has one ‚Üí [RecoveryPhone]  (stored encrypted with phone-derived key)
-  ‚îî‚îÄ‚îÄ has many ‚Üí [Account]       (each stored as AES-256-CBC encrypted block)
-                    ‚îú‚îÄ‚îÄ website
-                    ‚îú‚îÄ‚îÄ username
-                    ‚îî‚îÄ‚îÄ password
+  +-- has one ? [MasterPassword] (stored as PBKDF2 salt + HMAC verifier)
+  +-- has one ? [RecoveryPhone]  (stored encrypted with phone-derived key)
+  +-- has many ? [Account]       (each stored as AES-256-CBC encrypted block)
+                    +-- website
+                    +-- username
+                    +-- password
 ```
 
 ---
@@ -229,24 +229,24 @@ All data is stored in the user's AppData directory:
 
 ### Electron.js
 
-Electron is an open-source framework developed by GitHub that allows building cross-platform desktop applications using web technologies ‚Äî HTML, CSS, and JavaScript. It combines the Chromium rendering engine and the Node.js runtime into a single executable. SafeVault uses Electron to create a native desktop window, handle file system access, and manage IPC communication between the main and renderer processes.
+Electron is an open-source framework developed by GitHub that allows building cross-platform desktop applications using web technologies ó HTML, CSS, and JavaScript. It combines the Chromium rendering engine and the Node.js runtime into a single executable. SafeVault uses Electron to create a native desktop window, handle file system access, and manage IPC communication between the main and renderer processes.
 
 Key Electron APIs used:
-- `BrowserWindow` ‚Äî creates and manages the application window.
-- `ipcMain` / `ipcRenderer` ‚Äî enables communication between main and renderer processes.
-- `app.getPath('userData')` ‚Äî resolves the platform-specific user data directory for storing vault files.
+- `BrowserWindow` ó creates and manages the application window.
+- `ipcMain` / `ipcRenderer` ó enables communication between main and renderer processes.
+- `app.getPath('userData')` ó resolves the platform-specific user data directory for storing vault files.
 
 ### Node.js `crypto` Module
 
 The built-in Node.js `crypto` module provides all cryptographic functionality used in SafeVault. No third-party crypto library is required.
 
 Functions used:
-- `crypto.pbkdf2Sync` ‚Äî derives the vault encryption key from the master password.
-- `crypto.createCipheriv` / `crypto.createDecipheriv` ‚Äî AES-256-CBC encryption and decryption.
-- `crypto.createHmac` ‚Äî generates the master password verifier.
-- `crypto.randomBytes` ‚Äî generates cryptographically secure random IVs and salts.
-- `crypto.randomInt` ‚Äî used in OTP and password generation.
-- `crypto.scryptSync` ‚Äî derives the metadata key for encrypting the recovery phone number.
+- `crypto.pbkdf2Sync` ó derives the vault encryption key from the master password.
+- `crypto.createCipheriv` / `crypto.createDecipheriv` ó AES-256-CBC encryption and decryption.
+- `crypto.createHmac` ó generates the master password verifier.
+- `crypto.randomBytes` ó generates cryptographically secure random IVs and salts.
+- `crypto.randomInt` ó used in OTP and password generation.
+- `crypto.scryptSync` ó derives the metadata key for encrypting the recovery phone number.
 
 ### HTML / CSS / JavaScript
 
@@ -580,11 +580,11 @@ Unit testing was performed on each individual module to verify correct behavior 
 
 Integration testing verified that the modules work correctly together as a complete system.
 
-- **Login ‚Üí Dashboard flow:** After creating a master password and logging in, the dashboard loads and `getKeyBuffer()` returns a valid key.
-- **Add ‚Üí Encrypt ‚Üí Save ‚Üí Load ‚Üí Decrypt flow:** Adding an account encrypts it, saves it to disk, and the rendered account list correctly decrypts and displays it.
-- **OTP Recovery flow:** Registering a phone, triggering forgot password, sending OTP, verifying OTP, and resetting the master password ‚Äî the vault remains accessible with the new password.
+- **Login ? Dashboard flow:** After creating a master password and logging in, the dashboard loads and `getKeyBuffer()` returns a valid key.
+- **Add ? Encrypt ? Save ? Load ? Decrypt flow:** Adding an account encrypts it, saves it to disk, and the rendered account list correctly decrypts and displays it.
+- **OTP Recovery flow:** Registering a phone, triggering forgot password, sending OTP, verifying OTP, and resetting the master password ó the vault remains accessible with the new password.
 - **Auto-lock flow:** After the inactivity timeout, the session key is cleared and the user is redirected to the login screen. The vault cannot be accessed without re-entering the master password.
-- **Delete ‚Üí Restore flow:** Deleting an account moves it to the recycle bin. Restoring it re-encrypts and saves it back to the vault.
+- **Delete ? Restore flow:** Deleting an account moves it to the recycle bin. Restoring it re-encrypts and saves it back to the vault.
 
 ### Test Results Summary
 
@@ -615,11 +615,11 @@ On first launch, the user is prompted to create a master password. On subsequent
 **Recovery Phone Setup**
 After creating the vault, the user is prompted to register a recovery phone number with country code (e.g., +923001234567). This step can be skipped and configured later from Settings.
 
-**Dashboard ‚Äî Add Account**
+**Dashboard ó Add Account**
 The main dashboard shows a form to add new credentials (website, username, password). A real-time password strength bar and improvement tips are shown as the user types. A "Generate" button creates a strong random password.
 
-**Dashboard ‚Äî Saved Accounts**
-All saved accounts are listed with the password hidden by default (shown as ‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢). Each account has Show, Copy, Edit, and Delete buttons.
+**Dashboard ó Saved Accounts**
+All saved accounts are listed with the password hidden by default (shown as ïïïïïïïï). Each account has Show, Copy, Edit, and Delete buttons.
 
 **Reveal Password (Master Verify Modal)**
 Clicking "Show" or "Copy" on any account opens a modal requiring the user to re-enter their master password before the credential is revealed.
@@ -627,7 +627,7 @@ Clicking "Show" or "Copy" on any account opens a modal requiring the user to re-
 **Edit Account Modal**
 Clicking "Edit" opens a modal pre-filled with the current credentials. The password strength bar updates in real time as the user edits the password.
 
-**Forgot Password ‚Äî OTP Flow**
+**Forgot Password ó OTP Flow**
 Clicking "Forgot master password?" shows the masked recovery phone number and a "Send OTP" button. After the OTP is verified, the user can set a new master password.
 
 **Settings Panel**
@@ -642,23 +642,23 @@ The Restore panel shows all deleted accounts with options to restore them to the
 
 **Technologies and Frameworks:**
 
-- Electron.js Documentation ‚Äî https://www.electronjs.org/docs
-- Node.js `crypto` Module Documentation ‚Äî https://nodejs.org/api/crypto.html
-- Electron Builder Documentation ‚Äî https://www.electron.build
-- NSIS (Nullsoft Scriptable Install System) ‚Äî https://nsis.sourceforge.io
+- Electron.js Documentation ó https://www.electronjs.org/docs
+- Node.js `crypto` Module Documentation ó https://nodejs.org/api/crypto.html
+- Electron Builder Documentation ó https://www.electron.build
+- NSIS (Nullsoft Scriptable Install System) ó https://nsis.sourceforge.io
 
 **Security References:**
 
-- NIST Special Publication 800-132 ‚Äî Recommendation for Password-Based Key Derivation
-- AES (Advanced Encryption Standard) ‚Äî FIPS PUB 197
-- HMAC ‚Äî RFC 2104
+- NIST Special Publication 800-132 ó Recommendation for Password-Based Key Derivation
+- AES (Advanced Encryption Standard) ó FIPS PUB 197
+- HMAC ó RFC 2104
 
 **SMS API:**
 
-- 2Factor.in SMS API Documentation ‚Äî https://2factor.in/API/
+- 2Factor.in SMS API Documentation ó https://2factor.in/API/
 
 **General References:**
 
-- MDN Web Docs ‚Äî https://developer.mozilla.org
-- Wikipedia ‚Äî https://www.wikipedia.org
-- Stack Overflow ‚Äî https://stackoverflow.com
+- MDN Web Docs ó https://developer.mozilla.org
+- Wikipedia ó https://www.wikipedia.org
+- Stack Overflow ó https://stackoverflow.com
