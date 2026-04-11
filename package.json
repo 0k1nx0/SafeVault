@@ -1,0 +1,99 @@
+{
+  "name": "safevault",
+  "version": "3.0.0",
+  "description": "Secure password manager with OTP recovery",
+  "main": "main.js",
+  "author": {
+    "name": "Tangersoft",
+    "email": "support@tangersoft.com"
+  },
+  "license": "ISC",
+  "scripts": {
+    "start": "electron-forge start",
+    "build": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
+    "package-win": "electron-packager . SafeVault --platform=win32 --arch=x64 --icon=assets/icon.ico --overwrite --out=dist",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "build": {
+    "appId": "com.tangersoft.safevault",
+    "productName": "SafeVault",
+    "copyright": "Copyright © 2026 Tangersoft",
+    "directories": {
+      "output": "dist-installer"
+    },
+    "files": [
+      "**/*",
+      "!dist/**",
+      "!dist-installer/**",
+      "!out/**",
+      "!.kiro/**",
+      "!.vscode/**",
+      "!scripts/**",
+      "!node_modules/.cache/**",
+      "!**/*.md",
+      "!forge.config.js"
+    ],
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "icon": "assets/icon.ico",
+      "legalTrademarks": "SafeVault is a trademark of Tangersoft"
+    },
+    "mac": {
+      "target": [{ "target": "dmg", "arch": ["x64", "arm64"] }],
+      "icon": "assets/icon.png",
+      "category": "public.app-category.utilities",
+      "copyright": "Copyright © 2026 Tangersoft"
+    },
+    "dmg": {
+      "title": "SafeVault ${version}",
+      "artifactName": "SafeVault-Setup-${version}.dmg"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "icon": "assets/icon.png",
+      "category": "Utility",
+      "artifactName": "SafeVault-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico",
+      "installerHeaderIcon": "assets/icon.ico",
+      "installerSidebar": "assets/installer-sidebar.bmp",
+      "uninstallerSidebar": "assets/installer-sidebar.bmp",
+      "installerHeader": "assets/installer-header.bmp",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "SafeVault",
+      "displayLanguageSelector": false,
+      "installerLanguages": ["en_US"],
+      "license": "assets/license.txt",
+      "artifactName": "SafeVault-Setup-${version}.exe",
+      "deleteAppDataOnUninstall": false
+    }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1",
+    "firebase": "^12.11.0",
+    "firebase-admin": "^13.7.0",
+    "twilio": "^4.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.10.2",
+    "@electron-forge/maker-deb": "^7.10.2",
+    "@electron-forge/maker-rpm": "^7.10.2",
+    "@electron-forge/maker-squirrel": "^7.10.2",
+    "@electron-forge/maker-wix": "^7.11.1",
+    "@electron-forge/maker-zip": "^7.10.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
+    "@electron-forge/plugin-fuses": "^7.10.2",
+    "@electron/fuses": "^1.8.0",
+    "electron": "^39.0.0",
+    "electron-builder": "^26.8.1",
+    "electron-packager": "^17.1.2"
+  }
+}

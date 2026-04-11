@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SafeVault</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="login-page">
+
+  <!-- ── Splash Screen ── -->
+  <div id="splash">
+    <div class="splash-inner">
+      <div class="splash-logo-wrap">
+        <img src="../../../assets/icon.png" alt="SafeVault" class="splash-logo">
+        <div class="splash-ring"></div>
+      </div>
+      <div class="splash-name">SafeVault</div>
+      <div class="splash-tagline">Your passwords, locked tight.</div>
+      <div class="splash-loader">
+        <div class="splash-bar"><div class="splash-fill" id="splashFill"></div></div>
+        <span class="splash-status" id="splashStatus">Initializing…</span>
+      </div>
+      <div class="splash-company">A product by <span>Tangersoft</span></div>
+    </div>
+  </div>
+
+  <!-- ── Login Screen ── -->
+  <div class="login-center" id="loginScreen" style="display:none;opacity:0;">
+    <div class="login-box">
+      <div class="login-logo">
+        <img src="../../../assets/icon.png" alt="SafeVault Logo" class="logo">
+      </div>
+      <h1 id="title">SafeVault</h1>
+      <p class="login-subtitle">Secure password manager</p>
+      <div class="pass-input-wrap" style="width:88%;">
+        <input type="password" id="masterPassword" placeholder="Enter Master Password">
+        <button class="eye-toggle" id="toggleLoginPass" type="button" aria-label="Toggle password visibility">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+            <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+            <line x1="1" y1="1" x2="23" y2="23"/>
+          </svg>
+        </button>
+      </div>
+      <button id="loginBtn" class="btn-primary" onclick="handleLogin()">Unlock Vault</button>
+      <p id="info" class="p-muted"></p>
+      <a href="#" id="forgotLink" class="forgot-link">Forgot master password?</a>
+      <div class="login-footer">A product by <span class="company-name">Tangersoft</span></div>
+    </div>
+  </div>
+
+  <div id="recaptcha-container"></div>
+  <script>
+    // Splash sequence
+    const steps = [
+      { pct: 20, msg: 'Loading secure environment…' },
+      { pct: 50, msg: 'Verifying vault integrity…' },
+      { pct: 80, msg: 'Applying encryption layer…' },
+      { pct: 100, msg: 'Ready.' }
+    ];
+    let i = 0;
+    const fill   = document.getElementById('splashFill');
+    const status = document.getElementById('splashStatus');
+    const splash  = document.getElementById('splash');
+    const login   = document.getElementById('loginScreen');
+
+    function nextStep() {
+      if (i >= steps.length) {
+        setTimeout(() => {
+          splash.style.transition = 'opacity .5s ease';
+          splash.style.opacity = '0';
+          setTimeout(() => {
+            splash.style.display = 'none';
+            login.style.display = 'flex';
+            requestAnimationFrame(() => {
+              login.style.transition = 'opacity .5s ease';
+              login.style.opacity = '1';
+            });
+          }, 500);
+        }, 300);
+        return;
+      }
+      const s = steps[i++];
+      fill.style.width = s.pct + '%';
+      status.textContent = s.msg;
+      setTimeout(nextStep, i === steps.length ? 500 : 600);
+    }
+    setTimeout(nextStep, 400);
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SafeVault Dashboard</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="dashboard">
+
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+    </symbol>
+    <symbol id="icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+      <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+      <line x1="1" y1="1" x2="23" y2="23"/>
+    </symbol>
+    <symbol id="icon-copy" viewBox="0 0 24 24">
+      <path d="M16 1H4c-1.1 0-2 .9-2 2v12h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+    </symbol>
+    <symbol id="icon-edit" viewBox="0 0 24 24">
+      <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1.003 1.003 0 0 0 0-1.42l-2.34-2.34a1.003 1.003 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z"/>
+    </symbol>
+    <symbol id="icon-trash" viewBox="0 0 24 24">
+      <path d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+    </symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24">
+      <path d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm6-7h-1V7a5 5 0 0 0-10 0v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2zM9 7a3 3 0 0 1 6 0v3H9V7z"/>
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24">
+      <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L20 21.49 21.49 20l-5.99-6zM10 14a4 4 0 1 1 .001-8.001A4 4 0 0 1 10 14z"/>
+    </symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24">
+      <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.06-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.73,8.87C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.06,0.94l-2.03,1.58c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.43-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.49-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
+    </symbol>
+  </svg>
+
+  <nav class="nav">
+    <div class="brand">
+      <img src="../../../assets/logo.png" alt="SafeVault" class="logo">
+    </div>
+    <div class="nav-center">
+      <div class="search-wrap">
+        <svg class="search-icon" width="16" height="16"><use xlink:href="#icon-search"></use></svg>
+        <input id="search" type="text" placeholder="Search websites or usernames…">
+      </div>
+    </div>
+    <div class="nav-buttons">
+      <button id="restoreBtn" class="btn-ghost"><svg width="15" height="15"><use xlink:href="#icon-trash"></use></svg> Restore</button>
+      <button id="settingsBtn" class="btn-ghost" onclick="openSettingsModal()"><svg width="15" height="15"><use xlink:href="#icon-settings"></use></svg> Settings</button>
+      <button id="lockBtn" class="btn-ghost"><svg width="15" height="15"><use xlink:href="#icon-lock"></use></svg> Lock</button>
+    </div>
+  </nav>
+
+  <div class="content">
+    <section class="panel">
+      <p class="panel-title">Add New Account</p>
+      <small class="hint">All passwords are encrypted with AES-256 before saving.</small>
+      <div class="add-form">
+        <input type="text" id="site" placeholder="Website Name / URL">
+        <input type="text" id="user" placeholder="Username / Email">
+        <div class="pass-input-wrap">
+          <input type="password" id="pass" placeholder="Enter a password">
+          <button class="eye-toggle" id="toggleAddPass" type="button" aria-label="Toggle password visibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+              <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+              <line x1="1" y1="1" x2="23" y2="23"/>
+            </svg>
+          </button>
+        </div>
+        <div class="strength-wrap">
+          <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+          <span class="strength-label" id="strengthLabel"></span>
+        </div>
+        <ul class="strength-tips" id="strengthTips"></ul>
+        <div class="add-actions">
+          <button onclick="addAccount()" class="btn-primary"><svg width="15" height="15"><use xlink:href="#icon-lock"></use></svg> Add Account</button>
+          <button onclick="generatePassword()" class="btn-generate">⚡ Generate</button>
+        </div>
+      </div>
+    </section>
+    <section class="panel">
+      <h3 class="section-title">My Saved Accounts</h3>
+      <div class="accounts" id="accountsList"></div>
+    </section>
+  </div>
+  <div class="footer-gap"></div>
+
+  <div id="masterVerifyModal" class="modal hidden">
+    <div class="modal-content verify-modal">
+      <div class="verify-icon">🔐</div>
+      <h3>Verify Identity</h3>
+      <p class="verify-sub">Enter your master password to reveal this password</p>
+      <div class="input-wrap">
+        <input type="password" id="mvInput" placeholder="Master Password">
+        <button class="eye-toggle" id="mvToggle" type="button" aria-label="Toggle">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+            <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+            <line x1="1" y1="1" x2="23" y2="23"/>
+          </svg>
+        </button>
+      </div>
+      <p class="mv-error" id="mvError"></p>
+      <div class="modal-actions" style="justify-content:center;gap:12px;">
+        <button id="mvCancel" class="btn-secondary">Cancel</button>
+        <button id="mvConfirm" class="btn-primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="editModal" class="modal hidden">
+    <div class="modal-content edit-modal-content">
+      <div class="edit-modal-header">
+        <div class="edit-modal-icon">✏️</div>
+        <div><h3>Edit Account</h3><p class="edit-modal-sub">Update your saved credentials below</p></div>
+      </div>
+      <div class="edit-divider"></div>
+      <div class="edit-field-group">
+        <label class="edit-label"><span class="edit-label-icon">🌐</span> Website / URL</label>
+        <input type="text" id="editSite" placeholder="e.g. github.com">
+      </div>
+      <div class="edit-field-group">
+        <label class="edit-label"><span class="edit-label-icon">👤</span> Username / Email</label>
+        <input type="text" id="editUser" placeholder="e.g. user@email.com">
+      </div>
+      <div class="edit-field-group">
+        <label class="edit-label"><span class="edit-label-icon">🔑</span> Password</label>
+        <div class="pass-input-wrap">
+          <input type="password" id="editPass" placeholder="Password">
+          <button class="eye-toggle" id="toggleEditPass" type="button" aria-label="Toggle password visibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+              <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+              <line x1="1" y1="1" x2="23" y2="23"/>
+            </svg>
+          </button>
+        </div>
+        <div id="editStrengthWrap" class="strength-wrap" style="margin-top:8px;">
+          <div class="strength-bar"><div class="strength-fill" id="editStrengthFill"></div></div>
+          <span class="strength-label" id="editStrengthLabel"></span>
+        </div>
+      </div>
+      <div class="edit-divider"></div>
+      <div class="modal-actions">
+        <button id="cancelEdit" class="btn-secondary">✕ Cancel</button>
+        <button id="saveEdit" class="btn-primary">💾 Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="settingsModal" class="modal hidden">
+    <div class="modal-content" style="width:420px;text-align:center;">
+      <div style="font-size:36px;margin-bottom:8px;">⚙️</div>
+      <h3>Settings</h3>
+      <div class="settings-list">
+        <button class="settings-option-btn" id="updatePhoneBtn"><span style="font-size:20px;">📱</span> Recovery Phone Configuration</button>
+        <button class="settings-option-btn" id="infoBtn"><span style="font-size:20px;">ℹ️</span> About SafeVault</button>
+        <button class="settings-option-btn" id="resetBtn" style="color:#ff5e5e;border-color:rgba(255,94,94,0.2);background:rgba(255,50,50,0.05);"><span style="font-size:20px;">⚠️</span> Erase All Vault Data</button>
+      </div>
+      <div class="modal-actions" style="justify-content:center;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;margin-top:8px;">
+        <button id="closeSettings" class="btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+SafeVault - End User License Agreement
+Copyright (c) 2026 Tangersoft. All rights reserved.
+
+PLEASE READ THIS AGREEMENT CAREFULLY BEFORE INSTALLING SAFEVAULT.
+
+1. LICENSE GRANT
+   Tangersoft grants you a personal, non-exclusive, non-transferable
+   license to install and use SafeVault on your device.
+
+2. RESTRICTIONS
+   You may not redistribute, sell, or sublicense this software without
+   prior written permission from Tangersoft.
+
+3. DATA & PRIVACY
+   SafeVault stores all data locally on your device using AES-256
+   encryption. No passwords or vault data are transmitted to any server.
+
+4. DISCLAIMER
+   This software is provided "as is". Tangersoft is not responsible
+   for any loss of data or passwords.
+
+5. ACCEPTANCE
+   By clicking "I Agree" you accept all terms of this agreement.
+
+   SafeVault v3.0.0 - Tangersoft - 2026

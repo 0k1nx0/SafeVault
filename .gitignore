@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dist-installer/
+out/
+.kiro/
+*.pfx
+*.p12
+.env
+sms-config.js
