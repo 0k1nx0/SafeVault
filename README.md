@@ -8,7 +8,7 @@
 
 <p align="center">
   <img alt="Version" src="https://img.shields.io/badge/version-3.0.0-0aa38f">
-  <img alt="Platform" src="https://img.shields.io/badge/platform-Windows-1f6feb">
+  <img alt="Platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux-1f6feb">
   <img alt="Built with" src="https://img.shields.io/badge/built%20with-Electron-20232a">
 </p>
 
@@ -18,8 +18,61 @@ SafeVault is a desktop password manager built with Electron for users who want a
 
 ## Download
 
-- Windows installer: `SafeVault-Setup-3.0.0.exe`
-- Download the latest installer from the repository's **Releases** section
+| Platform | File | Notes |
+|----------|------|-------|
+| Windows  | `SafeVault-Setup-3.0.0.exe` | Run the installer |
+| Linux (Debian/Ubuntu) | `SafeVault-Setup-3.0.0.deb` | Install with dpkg |
+| Linux (Any distro) | `SafeVault-Setup-3.0.0.AppImage` | No install needed |
+
+Download the latest builds from the repository's **Releases** section or **Actions → Artifacts**.
+
+---
+
+## Installation
+
+### Windows
+
+1. Download `SafeVault-Setup-3.0.0.exe`
+2. Double-click to run the installer
+3. Follow the setup wizard
+4. SafeVault will appear in your Start Menu and Desktop
+
+### Linux — .deb (Ubuntu / Debian / Mint)
+
+```bash
+# Fix permissions first
+chmod +x SafeVault-Setup-3.0.0.deb
+
+# Install
+sudo dpkg -i SafeVault-Setup-3.0.0.deb
+
+# Fix any missing dependencies
+sudo apt-get install -f
+```
+
+SafeVault will appear in your Applications menu. Search "SafeVault" in the app drawer to launch it.
+
+**To uninstall:**
+```bash
+sudo dpkg -r safevault
+# or
+sudo apt remove safevault -y
+```
+
+### Linux — .AppImage (Any distro)
+
+```bash
+# Make executable
+chmod +x SafeVault-Setup-3.0.0.AppImage
+
+# Run (requires FUSE)
+./SafeVault-Setup-3.0.0.AppImage --no-sandbox
+
+# Install FUSE if needed
+sudo apt install libfuse2 -y
+```
+
+---
 
 ## Key Features
 
@@ -31,7 +84,7 @@ SafeVault is a desktop password manager built with Electron for users who want a
 - Built-in random password generator
 - Auto-lock on inactivity
 - Restore flow for deleted accounts
-- Native Windows installer packaging
+- Native installer for Windows and Linux
 
 ## Screens
 
@@ -58,29 +111,34 @@ SafeVault is a desktop password manager built with Electron for users who want a
 
 1. Install dependencies:
 
-```powershell
+```bash
 npm install
 ```
 
 2. Configure SMS OTP:
 
-```powershell
-Copy-Item sms-config.example.js sms-config.js
+```bash
+cp sms-config.example.js sms-config.js
 ```
 
 Then open `sms-config.js` and add your 2Factor API key.
 
 3. Start the app:
 
-```powershell
+```bash
 npm start
 ```
 
 ## Build
 
+**Windows:**
 ```powershell
 npm run build
 ```
+
+**Linux (via GitHub Actions):**
+
+Push to `main` branch — the workflow at `.github/workflows/build-linux.yml` automatically builds `.AppImage` and `.deb` files. Download from the Actions → Artifacts section.
 
 ## Notes
 
