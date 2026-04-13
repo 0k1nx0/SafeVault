@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Settings: about
   document.getElementById('infoBtn').addEventListener('click', () => {
     closeSettingsModal();
-    const iconPath = require('path').join(__dirname, '../../../assets/icon.png').replace(/\\/g, '/');
+    const iconPath = require('path').join(__dirname, '../../../assets/icon.ico').replace(/\\/g, '/');
     const overlay = makeOverlay();
     overlay.innerHTML = `
       <div style="background:linear-gradient(160deg,rgba(13,31,45,0.98),rgba(9,22,32,0.98));border:1px solid rgba(0,240,201,0.18);border-radius:22px;width:400px;max-width:calc(100vw - 32px);box-shadow:0 24px 80px rgba(0,0,0,0.8),0 0 60px rgba(0,240,201,0.06);color:#eafbf6;overflow:hidden;">
