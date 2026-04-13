@@ -67,12 +67,27 @@
       "!forge.config.js"
     ],
     "win": {
-      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
       "icon": "assets/icon.ico",
       "legalTrademarks": "SafeVault is a trademark of Tangersoft"
     },
     "mac": {
-      "target": [{ "target": "dmg", "arch": ["x64", "arm64"] }],
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
       "icon": "assets/icon.png",
       "category": "public.app-category.utilities",
       "copyright": "Copyright © 2026 Tangersoft"
@@ -82,7 +97,10 @@
       "artifactName": "SafeVault-Setup-${version}.dmg"
     },
     "linux": {
-      "target": ["AppImage", "deb"],
+      "target": [
+        "AppImage",
+        "deb"
+      ],
       "icon": "assets/icon.png",
       "category": "Utility",
       "artifactName": "SafeVault-Setup-${version}.${ext}"
@@ -100,7 +118,9 @@
       "createStartMenuShortcut": true,
       "shortcutName": "SafeVault",
       "displayLanguageSelector": false,
-      "installerLanguages": ["en_US"],
+      "installerLanguages": [
+        "en_US"
+      ],
       "license": "assets/license.txt",
       "artifactName": "SafeVault-Setup-${version}.exe",
       "deleteAppDataOnUninstall": false
@@ -124,6 +144,7 @@
     "@electron/fuses": "^1.8.0",
     "electron": "^39.0.0",
     "electron-builder": "^26.8.1",
+    "electron-forge-maker-appimage": "^26.8.1",
     "electron-packager": "^17.1.2"
   }
 }

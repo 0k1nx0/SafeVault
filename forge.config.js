@@ -54,12 +54,34 @@ module.exports = {
       platforms: ['darwin'],
     },
     {
+      name: 'electron-forge-maker-appimage',
+      config: {
+        options: {
+          icon: 'assets/icon.png',
+        },
+      },
+    },
+    {
       name: '@electron-forge/maker-deb',
-      config: {},
+      config: {
+        options: {
+          maintainer: 'Tangersoft',
+          homepage: 'https://safevault.app',
+          description: 'Secure password manager with AES-256 encryption and OTP recovery',
+          icon: 'assets/icon.png',
+        },
+      },
     },
     {
       name: '@electron-forge/maker-rpm',
-      config: {},
+      config: {
+        options: {
+          maintainer: 'Tangersoft',
+          homepage: 'https://safevault.app',
+          description: 'Secure password manager with AES-256 encryption and OTP recovery',
+          icon: 'assets/icon.png',
+        },
+      },
     },
   ],
 
