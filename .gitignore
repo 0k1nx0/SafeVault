@@ -6,4 +6,4 @@ out/
 *.pfx
 *.p12
 .env
-sms-config.js
+# sms-config.js  ← temporarily unignored for linux build test
