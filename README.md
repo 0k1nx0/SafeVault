@@ -100,6 +100,29 @@ To get Linux artifacts from GitHub:
 3. Run or open the `Build Linux` workflow
 4. Download the `SafeVault-Linux` artifact after the workflow finishes
 
+## Linux Install
+
+After downloading the Linux build artifact, users can install or run SafeVault like this:
+
+### AppImage
+
+```bash
+chmod +x SafeVault-Setup-3.0.0.AppImage
+./SafeVault-Setup-3.0.0.AppImage
+```
+
+### DEB
+
+```bash
+sudo apt install ./SafeVault-Setup-3.0.0.deb
+```
+
+### RPM
+
+```bash
+sudo rpm -i SafeVault-Setup-3.0.0.rpm
+```
+
 ## Notes
 
 - `sms-config.js` is intentionally ignored to keep API credentials out of GitHub
