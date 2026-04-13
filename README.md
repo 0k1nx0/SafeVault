@@ -1,6 +1,7 @@
 <div align="center">
 
 <img src="assets/icon.ico" alt="SafeVault" width="100" style="border-radius:20px">
+
 # SafeVault
 
 **Fort Knox level password security — local, encrypted, yours.**
