@@ -8,7 +8,7 @@
 
 <p align="center">
   <img alt="Version" src="https://img.shields.io/badge/version-3.0.0-0aa38f">
-  <img alt="Platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux-1f6feb">
+  <img alt="Platform" src="https://img.shields.io/badge/platform-Windows-1f6feb">
   <img alt="Built with" src="https://img.shields.io/badge/built%20with-Electron-20232a">
 </p>
 
@@ -19,9 +19,7 @@ SafeVault is a desktop password manager built with Electron for users who want a
 ## Download
 
 - Windows installer: `SafeVault-Setup-3.0.0.exe`
-- Linux builds: `.AppImage`, `.deb`, `.rpm`
-- Recommended distribution: upload the installer to the repository's **Releases** section on GitHub so users can download it directly
-- Linux artifacts can be downloaded from the **Actions** tab after the `Build Linux` workflow completes
+- Download the latest installer from the repository's **Releases** section
 
 ## Key Features
 
@@ -34,7 +32,6 @@ SafeVault is a desktop password manager built with Electron for users who want a
 - Auto-lock on inactivity
 - Restore flow for deleted accounts
 - Native Windows installer packaging
-- Linux packaging for AppImage, DEB, and RPM formats
 
 ## Screens
 
@@ -85,45 +82,7 @@ npm start
 npm run build
 ```
 
-## Linux Builds
-
-SafeVault can also be built and distributed for Linux in three formats:
-
-- `.AppImage` for portable use on most distributions
-- `.deb` for Ubuntu, Debian, and Linux Mint
-- `.rpm` for Fedora, RHEL, and openSUSE
-
-To get Linux artifacts from GitHub:
-
-1. Push your latest code to GitHub
-2. Open the `Actions` tab
-3. Run or open the `Build Linux` workflow
-4. Download the `SafeVault-Linux` artifact after the workflow finishes
-
-## Linux Install
-
-After downloading the Linux build artifact, users can install or run SafeVault like this:
-
-### AppImage
-
-```bash
-chmod +x SafeVault-Setup-3.0.0.AppImage
-./SafeVault-Setup-3.0.0.AppImage
-```
-
-### DEB
-
-```bash
-sudo apt install ./SafeVault-Setup-3.0.0.deb
-```
-
-### RPM
-
-```bash
-sudo rpm -i SafeVault-Setup-3.0.0.rpm
-```
-
 ## Notes
 
 - `sms-config.js` is intentionally ignored to keep API credentials out of GitHub
-- For the most professional download experience, publish `SafeVault-Setup-3.0.0.exe` as a GitHub Release asset instead of committing the `.exe` into the repository
+- For the most professional download experience, publish installer files through GitHub Releases instead of committing binaries into the repository
