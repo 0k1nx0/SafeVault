@@ -17,19 +17,40 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - name: Install dependencies
-        run: npm install
+          cache: 'npm'
 
       - name: Install Linux build deps
         run: |
           sudo apt-get update
-          sudo apt-get install -y rpm fakeroot dpkg libfuse2
+          sudo apt-get install -y \
+            rpm \
+            fakeroot \
+            dpkg \
+            libfuse2 \
+            libgtk-3-0 \
+            libnotify4 \
+            libnss3 \
+            libxss1 \
+            libxtst6 \
+            xdg-utils \
+            libatspi2.0-0 \
+            libuuid1 \
+            libsecret-1-0
 
-      - name: Build Linux (.AppImage + .deb + .rpm)
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Linux
         run: npx electron-forge make --platform linux
+        env:
+          DEBUG: electron-forge:*
+
+      - name: List build output
+        if: always()
+        run: find out/ -type f 2>/dev/null || echo "No output directory found"
 
       - name: Upload artifacts
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: SafeVault-Linux
