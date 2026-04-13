@@ -100,7 +100,7 @@
         "AppImage",
         "deb"
       ],
-      "icon": "assets/icon.png",
+      "icon": "assets/icons",
       "category": "Utility",
       "artifactName": "SafeVault-Setup-${version}.${ext}"
     },
