@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="SafeVault Logo" width="180">
+  <img src="assets/logoDark.png" alt="SafeVault Logo" width="180">
 </p>
 
 <p align="center">
