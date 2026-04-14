@@ -57,7 +57,7 @@ module.exports = {
       name: 'electron-forge-maker-appimage',
       config: {
         options: {
-          icon: 'assets/icon.png',
+          icon: path.resolve(__dirname, 'assets/icon.png'),
         },
       },
     },
@@ -68,7 +68,7 @@ module.exports = {
           maintainer: 'Tangersoft',
           homepage: 'https://safevault.app',
           description: 'Secure password manager with AES-256 encryption and OTP recovery',
-          icon: 'assets/icon.png',
+          icon: path.resolve(__dirname, 'assets/icon.png'),
         },
       },
     },
@@ -79,7 +79,7 @@ module.exports = {
           maintainer: 'Tangersoft',
           homepage: 'https://safevault.app',
           description: 'Secure password manager with AES-256 encryption and OTP recovery',
-          icon: 'assets/icon.png',
+          icon: path.resolve(__dirname, 'assets/icon.png'),
         },
       },
     },
