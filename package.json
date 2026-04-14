@@ -1,7 +1,7 @@
 {
   "name": "safevault",
   "version": "3.0.0",
-  "description": "Secure password manager with OTP recovery",
+  "description": "Free, open-source desktop password manager with AES-256-GCM encryption, OTP recovery, and zero cloud storage. Available for Windows, macOS, and Linux.",
   "main": "main.js",
   "homepage": "https://github.com/0k1nx0/safevault",
   "repository": {
@@ -17,7 +17,18 @@
     "security",
     "desktop-app",
     "encryption",
-    "otp"
+    "otp",
+    "aes-256",
+    "offline",
+    "open-source",
+    "cross-platform",
+    "vault",
+    "privacy",
+    "zero-knowledge",
+    "pbkdf2",
+    "windows",
+    "macos",
+    "linux"
   ],
   "author": {
     "name": "Tangersoft",
