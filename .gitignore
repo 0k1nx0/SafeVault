@@ -4,6 +4,7 @@ dist-installer/
 out/
 .kiro/
 .vscode/
+package-lock.json
 *.pfx
 *.p12
 .env
