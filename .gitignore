@@ -3,6 +3,7 @@ dist/
 dist-installer/
 out/
 .kiro/
+.vscode/
 *.pfx
 *.p12
 .env
