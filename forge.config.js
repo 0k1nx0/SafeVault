@@ -54,6 +54,14 @@ module.exports = {
       platforms: ['darwin'],
     },
     {
+      name: '@electron-forge/maker-dmg',
+      config: {
+        name: 'SafeVault',
+        icon: path.resolve(__dirname, 'assets/icon.icns'),
+        overwrite: true,
+      },
+    },
+    {
       name: 'electron-forge-maker-appimage',
       config: {
         options: {
