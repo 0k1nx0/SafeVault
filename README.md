@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/icon.png" alt="SafeVault Logo" width="110" style="border-radius:20px">
+<img src="assets/icon.ico" alt="SafeVault Logo" width="110" style="border-radius:20px">
 
 # SafeVault
 
