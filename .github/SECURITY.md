@@ -27,5 +27,3 @@ SafeVault is designed with a zero-knowledge, offline-first architecture:
 - No network requests — fully air-gapped capable
 - Master password is never stored
 - Open source — audit the code yourself
-
-See the [Security section in README](../README.md#security) for full details.
