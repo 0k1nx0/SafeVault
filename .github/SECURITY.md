@@ -13,7 +13,7 @@ If you discover a security vulnerability in SafeVault, please **do not** open a 
 
 Instead, report it privately:
 
-- **Email:** tangersofwefwefft.in@gmail.com
+- **Email:** tangersoft.in@gmail.com
 - **Subject:** `[SECURITY] SafeVault Vulnerability Report`
 
 We aim to respond within **48 hours** and will work with you to resolve the issue before any public disclosure.
