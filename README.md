@@ -15,7 +15,7 @@
 
 > SafeVault is a **free, open-source** desktop password manager that keeps your credentials **100% offline** — no cloud, no servers, no subscriptions. Your vault lives on your device, encrypted with AES-256-GCM, protected by a master password only you control.
 
-[🌐 Website](https://safevault.ct.ws) · [📥 Download](#download) · [🔒 Security](#security) · [👥 Team](#team)
+[🌐 Website](https://amtoz.in) · [📥 Download](#download) · [🔒 Security](#security) · [👥 Team](#team)
 
 </div>
 
