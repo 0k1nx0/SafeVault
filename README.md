@@ -80,7 +80,7 @@ Built on Electron, SafeVault delivers a native desktop experience on Windows, ma
 | 🐧 Linux (.AppImage) | `SafeVault-Setup-3.0.0.AppImage` | ~78 MB | x64 |
 
 **[→ Download from Releases](https://github.com/0k1nx0/SafeVault/releases/tag/v3.0.0)**  
-**[→ Download from Website](https://safevault.ct.ws)**
+**[→ Download from Website](https://amtoz.in)**
 
 > All versions are free and open source. No account required. No telemetry.
 
