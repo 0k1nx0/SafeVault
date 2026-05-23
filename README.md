@@ -277,5 +277,5 @@ Copyright © 2026 Tangersoft. All rights reserved.
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by <a href="https://amtoz.in">Tangersoft</a> · <a href="https://github.com/0k1nx0/SafeVault">GitHub</a> · <a href="https://amtoz.in">safevault</a></sub>
+  <sub>Built with ❤️ by <a href="https://amtoz.in">Tangersoft</a> · <a href="https://github.com/0k1nx0/SafeVault">GitHub</a> · <a href="https://amtoz.in">Safevault</a></sub>
 </div>
