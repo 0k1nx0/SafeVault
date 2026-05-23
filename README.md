@@ -258,7 +258,7 @@ SafeVault/
 
 ## Team
 
-SafeVault is built and maintained by **[Tangersoft](https://safevault.ct.ws)**.
+SafeVault is built and maintained by **[Tangersoft](https://amtoz.in)**.
 
 | Developer | Role | GitHub |
 |-----------|------|--------|
@@ -277,5 +277,5 @@ Copyright © 2026 Tangersoft. All rights reserved.
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by <a href="https://safevault.ct.ws">Tangersoft</a> · <a href="https://github.com/0k1nx0/SafeVault">GitHub</a> · <a href="https://safevault.ct.ws">safevault.ct.ws</a></sub>
+  <sub>Built with ❤️ by <a href="https://amtoz.in">Tangersoft</a> · <a href="https://github.com/0k1nx0/SafeVault">GitHub</a> · <a href="https://amtoz.in">safevault.ct.ws</a></sub>
 </div>
