@@ -15,7 +15,7 @@
 
 > SafeVault is a **free, open-source** desktop password manager that keeps your credentials **100% offline** — no cloud, no servers, no subscriptions. Your vault lives on your device, encrypted with AES-256-GCM, protected by a master password only you control.
 
-[🌐 Website](https://amtoz.in) · [📥 Download](#download) · [🔒 Security](#security) · [👥 Team](#team)
+[🌐 Website](https://safevault.infinityfreeapp.com) · [📥 Download](#download) · [🔒 Security](#security) · [👥 Team](#team)
 
 </div>
 
@@ -80,7 +80,7 @@ Built on Electron, SafeVault delivers a native desktop experience on Windows, ma
 | 🐧 Linux (.AppImage) | `SafeVault-Setup-3.0.0.AppImage` | ~78 MB | x64 |
 
 **[→ Download from Releases](https://github.com/0k1nx0/SafeVault/releases/tag/v3.0.0)**  
-**[→ Download from Website](https://amtoz.in)**
+**[→ Download from Website](https://safevault.infinityfreeapp.com)**
 
 > All versions are free and open source. No account required. No telemetry.
 
@@ -277,5 +277,5 @@ Copyright © 2026 Tangersoft. All rights reserved.
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by <a href="https://amtoz.in">Tangersoft</a> · <a href="https://github.com/0k1nx0/SafeVault">GitHub</a> · <a href="https://amtoz.in">Safevault</a></sub>
+  <sub>Built with ❤️ by <a href="[https://amtoz.in](https://safevault.infinityfreeapp.com">Tangersoft</a> · <a href="https://github.com/0k1nx0/SafeVault">GitHub</a> · <a href="[https://amtoz.in](https://safevault.infinityfreeapp.com)">Safevault</a></sub>
 </div>
